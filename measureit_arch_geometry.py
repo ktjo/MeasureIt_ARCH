@@ -4099,7 +4099,8 @@ def dim_text_placement(dim, dimProps, origin, dist, distVec, offsetDistance, cap
     dim.textPosition = 'T'
     dimLineExtension = 0  # add some extension to the line if the dimension is ext
     normDistVector = distVec.normalized()
-    dim.fontSize = dimProps.fontSize
+    if dim.fontSize != dimProps.fontSize:
+        dim.fontSize = dimProps.fontSize
 
     if dim.textAlignment == 'L':
         dim.textPosition = 'M'
